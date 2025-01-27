@@ -48,6 +48,28 @@ public class HelloController {
     void cambiarCombo(ActionEvent event) {
         opcion = ComboBox.getSelectionModel().getSelectedItem().toString();
         System.out.println(opcion);
+        if (opcion.equalsIgnoreCase("Salario")) {
+            label2.setVisible(true);
+            label1.setVisible(true);
+            label1.setText("Salario");
+            label2.setText("Comparador");
+            field1.setVisible(true);
+            field1.setText("");
+            ComboBoxComparador.setVisible(true);
+
+        } else if (opcion.equalsIgnoreCase("Departamento")) {
+            field1.setText("");
+            label2.setVisible(false);
+            label1.setVisible(true);
+            label1.setText("Nombre del departamento");
+            field1.setVisible(true);
+            ComboBoxComparador.setVisible(false);
+        } else {
+            label1.setVisible(false);
+            label2.setVisible(false);
+            field1.setVisible(false);
+            ComboBoxComparador.setVisible(false);
+        }
     }
 
     //MÉTODO QUE CAMBIA EL VALOR DE LA VARIABLE comparador AL SELECCIONADO
@@ -65,6 +87,11 @@ public class HelloController {
 
         ObservableList<String> estadosComp = FXCollections.observableArrayList("=", "<", ">");
         ComboBoxComparador.setItems(estadosComp);
+        ComboBoxComparador.setVisible(false);
+        ComboBox.setDisable(false);
+        label1.setVisible(false);
+        label2.setVisible(false);
+        field1.setVisible(false);
     }
 
     //MÉTODO QUE GENERA EL INFORME DEPENDIENDO DE LOS VALORES DE opcion.
@@ -87,9 +114,10 @@ public class HelloController {
                 parametros.put("ComparadorSalario", comparador);
                 //SE INDICA EL FICHERO .JASPER EN EL PROYECTO
                 print = JasperFillManager.fillReport("/Users/alber/IdeaProjects/PracticaInforme/src/main/java/org/example/practicainforme/Leaf_GreenSalario.jasper", parametros, conexion);
-            }else{
+            } else {
                 //SE BORRA EL MAPA PARA EVITAR ERRORES
                 parametros.clear();
+                parametros.put("ParametroDepartamento", field1.getText().toString());
                 //SE INDICA EL FICHERO .JASPER EN EL PROYECTO
                 print = JasperFillManager.fillReport("/Users/alber/IdeaProjects/PracticaInforme/src/main/java/org/example/practicainforme/Leaf_GreenDepartamento.jasper", parametros, conexion);
             }
