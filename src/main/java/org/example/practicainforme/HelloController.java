@@ -122,7 +122,8 @@ public class HelloController {
                 print = JasperFillManager.fillReport("/Users/alber/IdeaProjects/PracticaInforme/src/main/java/org/example/practicainforme/Leaf_GreenDepartamento.jasper", parametros, conexion);
             }
             //SE INDICA DONDE SE GUARDA EL PDF
-            JasperExportManager.exportReportToPdfFile(print, "/Users/alber/Desktop/JasperInformes/informe.pdf");
+            JasperExportManager.exportReportToPdfFile(print, "src/main/java/org/example/practicainforme/Informes/Reporte.pdf");
+
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         } catch (SQLException e) {
