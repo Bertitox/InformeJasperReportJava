@@ -36,7 +36,7 @@
       <ComboBox fx:id="ComboBoxComparador" onAction="#cambiarComboComparador" prefWidth="150.0" style="-fx-background-color: white; -fx-background-radius: 5px; -fx-border-color: black; -fx-border-radius: 5px;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
       <ImageView fitHeight="48.0" fitWidth="480.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="BOTTOM">
          <image>
-            <Image url="@Diseño sin título (5).png" />
+            <Image url="@Foto.png" />
          </image>
       </ImageView>
       <Button fx:id="generarPDFboton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#generarPDF" prefHeight="42.0" prefWidth="133.0" style="-fx-border-color: black; -fx-border-radius: 5px; -fx-background-radius: 6px; -fx-background-color: RGB(0, 150, 92);" text="Generar PDF" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4">
